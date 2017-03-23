@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
-using DevExpress.UserSkins;
-using DevExpress.Skins;
 using DevExpress.LookAndFeel;
+using DevExpress.Skins;
+using DevExpress.UserSkins;
 
 namespace SipeiyouSelector
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        ///     The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -22,7 +20,7 @@ namespace SipeiyouSelector
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            Application.Run(new Form1());
+            Application.Run(new XFrmMain());
         }
     }
 }
