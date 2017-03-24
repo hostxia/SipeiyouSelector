@@ -4,7 +4,10 @@ namespace SipeiyouSelector
 {
     public static class DicCourse
     {
-        public static Dictionary<string, string> DicGrade => new Dictionary<string, string> {{"小学一年级", "1"}};
+        public static Dictionary<string, string> DicGrade => new Dictionary<string, string>
+        {
+            {"小学一年级", "1"}
+        };
 
         public static Dictionary<string, string> DicSubject => new Dictionary<string, string>
         {
@@ -13,7 +16,10 @@ namespace SipeiyouSelector
             {"英语", "ff80808127d77caa0127d7e164bd00c8"}
         };
 
-        public static Dictionary<string, string> DicLevel => new Dictionary<string, string> {{"尖子", "3"}};
+        public static Dictionary<string, string> DicLevel => new Dictionary<string, string>
+        {
+            {"尖子", "3"}
+        };
 
         public static Dictionary<string, string> DicTerm => new Dictionary<string, string>
         {

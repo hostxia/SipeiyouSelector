@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+using DevExpress.Data;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Columns;
 
@@ -44,6 +45,8 @@ namespace SipeiyouSelector
         private void gridControl1_DataSourceChanged(object sender, EventArgs e)
         {
             gridView1.Columns.ToList().ForEach(c => c.OptionsFilter.AutoFilterCondition = AutoFilterCondition.Contains);
+            if (gridView1.Columns.Count > 0)
+                gridView1.Columns[0].SummaryItem.SummaryType = SummaryItemType.Count;
         }
     }
 }
