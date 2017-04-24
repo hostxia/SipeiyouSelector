@@ -7,22 +7,23 @@ namespace SipeiyouSelector
 {
     public class CourseCollectionHelper
     {
-        public CourseCollection GetAllCourses(string sTerm)
+        public CourseCollection GetAllCourses(string sGrade, string sTerm, string sSubjects, string sLevels)
         {
             var courseCollection = new CourseCollection();
-            foreach (var sGrade in DicCourse.DicGrade.Values)
-                foreach (var sLevel in DicCourse.DicLevel.Values)
-                    foreach (var sSubject in DicCourse.DicSubject.Values)
+            foreach (var sLevel in sLevels.Split(',').Select(s => s.Trim()).ToList())
+                foreach (var sSubject in sSubjects.Split(',').Select(s => s.Trim()).ToList())
+                {
+                    var sUrl =
+                        $"http://sbj.speiyou.com/search/index/grade:{sGrade}/subject:{sSubject}/level:{sLevel}/term:{sTerm}/gtype:time";
+                    var nPageCount = CourseSelectorHelper.GetPages(sUrl);
+                    if (nPageCount > 0)
                     {
-                        var sUrl =
-                            $"http://sbj.speiyou.com/search/index/grade:{sGrade}/subject:{sSubject}/level:{sLevel}/term:{sTerm}/gtype:time";
-                        var nPageCount = CourseSelectorHelper.GetPages(sUrl);
                         var waitHandles = new WaitHandle[nPageCount];
                         for (var i = 1; i <= nPageCount; i++)
                         {
                             waitHandles[i - 1] = new ManualResetEvent(false);
                             var pageUrl =
-$"http://sbj.speiyou.com/search/index/grade:{sGrade}/subject:{sSubject}/level:{sLevel}/term:{sTerm}/period:/teaid:/m:/d:/time:/bg:n/nu:/service:/curpage:{i}";
+    $"http://sbj.speiyou.com/search/index/grade:{sGrade}/subject:{sSubject}/level:{sLevel}/term:{sTerm}/period:/teaid:/m:/d:/time:/bg:n/nu:/service:/curpage:{i}";
                             ThreadPool.QueueUserWorkItem(e =>
                             {
                                 var collection = CourseSelectorHelper.GetCourses(((object[])e)[1].ToString());
@@ -33,6 +34,7 @@ $"http://sbj.speiyou.com/search/index/grade:{sGrade}/subject:{sSubject}/level:{s
                         }
                         WaitHandle.WaitAll(waitHandles);
                     }
+                }
             return SetBestGroup(courseCollection);
         }
 

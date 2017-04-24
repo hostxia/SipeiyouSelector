@@ -14,6 +14,7 @@ namespace SipeiyouSelector
             {
                 var course = new Course
                 {
+                    名称 = node.FirstChild.NextSibling.FirstChild.NextSibling.FirstChild.NextSibling.FirstChild.InnerText,
                     老师 = node.FirstChild.FirstChild.NextSibling.InnerText,
                     上课地点 =
                         node.FirstChild.NextSibling.FirstChild.NextSibling.FirstChild.NextSibling.NextSibling
@@ -35,7 +36,10 @@ namespace SipeiyouSelector
         {
             var htmlWeb = new HtmlWeb();
             var docNode = htmlWeb.Load(sUrl).DocumentNode;
-            var sPages = docNode.SelectSingleNode("//div[@class='pagination mtop40']").InnerText;
+            var pageNode = docNode.SelectSingleNode("//div[@class='pagination mtop40']");
+            if (pageNode == null)
+                return 0;
+            var sPages = pageNode.InnerText;
             return int.Parse(Regex.Match(sPages, @"(?<=/)\d+(?=页)").Value);
         }
     }

@@ -31,29 +31,43 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.xccbeLevel = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.xccbeSubject = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.xlueGrade = new DevExpress.XtraEditors.LookUpEdit();
+            this.xlueTerm = new DevExpress.XtraEditors.LookUpEdit();
             this.xsbSearch = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xccbeLevel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xccbeSubject.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xlueGrade.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xlueTerm.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 38);
+            this.gridControl1.Location = new System.Drawing.Point(12, 86);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(898, 526);
+            this.gridControl1.Size = new System.Drawing.Size(898, 478);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -71,7 +85,10 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.lookUpEdit1);
+            this.layoutControl1.Controls.Add(this.xccbeLevel);
+            this.layoutControl1.Controls.Add(this.xccbeSubject);
+            this.layoutControl1.Controls.Add(this.xlueGrade);
+            this.layoutControl1.Controls.Add(this.xlueTerm);
             this.layoutControl1.Controls.Add(this.xsbSearch);
             this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -82,23 +99,65 @@
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // lookUpEdit1
+            // xccbeLevel
             // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(75, 12);
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.xccbeLevel.Location = new System.Drawing.Point(526, 36);
+            this.xccbeLevel.Name = "xccbeLevel";
+            this.xccbeLevel.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit1.Properties.DisplayMember = "Key";
-            this.lookUpEdit1.Properties.ValueMember = "Value";
-            this.lookUpEdit1.Size = new System.Drawing.Size(384, 20);
-            this.lookUpEdit1.StyleController = this.layoutControl1;
-            this.lookUpEdit1.TabIndex = 4;
+            this.xccbeLevel.Properties.DisplayMember = "Key";
+            this.xccbeLevel.Properties.SelectAllItemVisible = false;
+            this.xccbeLevel.Properties.ValueMember = "Value";
+            this.xccbeLevel.Size = new System.Drawing.Size(384, 20);
+            this.xccbeLevel.StyleController = this.layoutControl1;
+            this.xccbeLevel.TabIndex = 6;
+            // 
+            // xccbeSubject
+            // 
+            this.xccbeSubject.Location = new System.Drawing.Point(75, 36);
+            this.xccbeSubject.Name = "xccbeSubject";
+            this.xccbeSubject.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.xccbeSubject.Properties.DisplayMember = "Key";
+            this.xccbeSubject.Properties.SelectAllItemVisible = false;
+            this.xccbeSubject.Properties.ValueMember = "Value";
+            this.xccbeSubject.Size = new System.Drawing.Size(384, 20);
+            this.xccbeSubject.StyleController = this.layoutControl1;
+            this.xccbeSubject.TabIndex = 2;
+            // 
+            // xlueGrade
+            // 
+            this.xlueGrade.Location = new System.Drawing.Point(75, 12);
+            this.xlueGrade.Name = "xlueGrade";
+            this.xlueGrade.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.xlueGrade.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Key", "年级")});
+            this.xlueGrade.Properties.DisplayMember = "Key";
+            this.xlueGrade.Properties.ValueMember = "Value";
+            this.xlueGrade.Size = new System.Drawing.Size(384, 20);
+            this.xlueGrade.StyleController = this.layoutControl1;
+            this.xlueGrade.TabIndex = 5;
+            // 
+            // xlueTerm
+            // 
+            this.xlueTerm.Location = new System.Drawing.Point(526, 12);
+            this.xlueTerm.Name = "xlueTerm";
+            this.xlueTerm.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.xlueTerm.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Key", "班级类型")});
+            this.xlueTerm.Properties.DisplayMember = "Key";
+            this.xlueTerm.Properties.ValueMember = "Value";
+            this.xlueTerm.Size = new System.Drawing.Size(384, 20);
+            this.xlueTerm.StyleController = this.layoutControl1;
+            this.xlueTerm.TabIndex = 4;
             // 
             // xsbSearch
             // 
-            this.xsbSearch.Location = new System.Drawing.Point(463, 12);
+            this.xsbSearch.Location = new System.Drawing.Point(794, 60);
             this.xsbSearch.Name = "xsbSearch";
-            this.xsbSearch.Size = new System.Drawing.Size(447, 22);
+            this.xsbSearch.Size = new System.Drawing.Size(116, 22);
             this.xsbSearch.StyleController = this.layoutControl1;
             this.xsbSearch.TabIndex = 2;
             this.xsbSearch.Text = "查询";
@@ -111,7 +170,11 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem4,
+            this.emptySpaceItem1,
+            this.layoutControlItem3,
+            this.layoutControlItem5,
+            this.layoutControlItem6});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(922, 576);
@@ -120,29 +183,67 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.gridControl1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 74);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(902, 530);
+            this.layoutControlItem1.Size = new System.Drawing.Size(902, 482);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.xsbSearch;
-            this.layoutControlItem2.Location = new System.Drawing.Point(451, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(782, 48);
+            this.layoutControlItem2.MaxSize = new System.Drawing.Size(120, 26);
+            this.layoutControlItem2.MinSize = new System.Drawing.Size(120, 26);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(451, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(120, 26);
+            this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.xlueGrade;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(451, 24);
+            this.layoutControlItem4.Text = "年级：";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(60, 14);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 48);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(782, 26);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.lookUpEdit1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.Control = this.xlueTerm;
+            this.layoutControlItem3.Location = new System.Drawing.Point(451, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(451, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(451, 24);
             this.layoutControlItem3.Text = "班级类型：";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 14);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.xccbeSubject;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(451, 24);
+            this.layoutControlItem5.Text = "学科：";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(60, 14);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.xccbeLevel;
+            this.layoutControlItem6.Location = new System.Drawing.Point(451, 24);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(451, 24);
+            this.layoutControlItem6.Text = "班次：";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(60, 14);
             // 
             // XFrmMain
             // 
@@ -157,11 +258,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xccbeLevel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xccbeSubject.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xlueGrade.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xlueTerm.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,10 +281,17 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.XtraEditors.LookUpEdit xlueTerm;
         private DevExpress.XtraEditors.SimpleButton xsbSearch;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraEditors.LookUpEdit xlueGrade;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit xccbeSubject;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraEditors.CheckedComboBoxEdit xccbeLevel;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }
 

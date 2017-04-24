@@ -16,8 +16,14 @@ namespace SipeiyouSelector
 
         private void XFrmMain_Load(object sender, EventArgs e)
         {
-            lookUpEdit1.Properties.DataSource = DicCourse.DicTerm;
-            lookUpEdit1.ItemIndex = 0;
+            xlueGrade.Properties.DataSource = DicCourse.DicGrade;
+            xlueGrade.ItemIndex = 0;
+            xccbeSubject.Properties.DataSource = DicCourse.DicSubject;
+            xccbeSubject.SetEditValue(DicCourse.DicSubject.First().Value);
+            xccbeLevel.Properties.DataSource = DicCourse.DicLevel;
+            xccbeLevel.SetEditValue(DicCourse.DicLevel.First().Value);
+            xlueTerm.Properties.DataSource = DicCourse.DicTerm;
+            xlueTerm.ItemIndex = 0;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -27,7 +33,7 @@ namespace SipeiyouSelector
                 try
                 {
                     xsbSearch.Invoke(new Action(() => { xsbSearch.Enabled = false; }));
-                    var courseCollection = new CourseCollectionHelper().GetAllCourses(lookUpEdit1.EditValue.ToString());
+                    var courseCollection = new CourseCollectionHelper().GetAllCourses(xlueGrade.EditValue.ToString(), xlueTerm.EditValue.ToString(), xccbeSubject.EditValue.ToString(), xccbeLevel.EditValue.ToString());
                     gridControl1.Invoke(new Action(() => { gridControl1.DataSource = courseCollection; }));
                 }
                 catch (Exception exception)
@@ -47,6 +53,8 @@ namespace SipeiyouSelector
             gridView1.Columns.ToList().ForEach(c => c.OptionsFilter.AutoFilterCondition = AutoFilterCondition.Contains);
             if (gridView1.Columns.Count > 0)
                 gridView1.Columns[0].SummaryItem.SummaryType = SummaryItemType.Count;
+
+            gridView1.BestFitColumns(true);
         }
     }
 }
