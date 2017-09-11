@@ -7,7 +7,7 @@ namespace SipeiyouSelector
 {
     public class CourseCollectionHelper
     {
-        public CourseCollection GetAllCourses(string sGrade, string sTerm, string sSubjects, string sLevels)
+        public CourseCollection GetAllCourses(string sGrade, string sTerm, string sSubjects, string sLevels, bool bUseGroup)
         {
             var courseCollection = new CourseCollection();
             foreach (var sLevel in sLevels.Split(',').Select(s => s.Trim()).ToList())
@@ -35,7 +35,8 @@ namespace SipeiyouSelector
                         WaitHandle.WaitAll(waitHandles);
                     }
                 }
-            return SetBestGroup(courseCollection);
+
+            return bUseGroup ? SetBestGroup(courseCollection) : courseCollection;
         }
 
         private CourseCollection SetBestGroup(CourseCollection courseCollection)

@@ -33,7 +33,7 @@ namespace SipeiyouSelector
                 try
                 {
                     xsbSearch.Invoke(new Action(() => { xsbSearch.Enabled = false; }));
-                    var courseCollection = new CourseCollectionHelper().GetAllCourses(xlueGrade.EditValue.ToString(), xlueTerm.EditValue.ToString(), xccbeSubject.EditValue.ToString(), xccbeLevel.EditValue.ToString());
+                    var courseCollection = new CourseCollectionHelper().GetAllCourses(xlueGrade.EditValue.ToString(), xlueTerm.EditValue.ToString(), xccbeSubject.EditValue.ToString(), xccbeLevel.EditValue.ToString(), xceGroup.Checked);
                     gridControl1.Invoke(new Action(() => { gridControl1.DataSource = courseCollection; }));
                 }
                 catch (Exception exception)
